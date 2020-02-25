@@ -14,7 +14,7 @@ import (
 var (
 	commands = [][]string{
 		{"/bbin/mount", "-t", "ext4", "/dev/sda1", "/var"},
-		{"/bbin/kexec", "-c", `loglvl=all guest_loglvl=all dom0_mem=512M console=com1 no-real-mode`, "--module", `/var/bzImage console=hvc0 earlyprintk=xen nomodeset root=/dev/sda2`, "/var/xen.gz"},
+		{"/bbin/kexec", "-c", `loglvl=all guest_loglvl=all dom0_mem=512M apic_verbosity=debug sched=credit console=com1 no-real-mode`, "--module", `/var/bzImage console=hvc0 earlyprintk=xen nomodeset root=/dev/sda2`, "/var/xen.gz"},
 	}
 )
 
